@@ -3,12 +3,20 @@
 <head>
   <title>REST+</title>
   <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+  
+  <!-- hreader support -->
   <%- if @hreader_ipad %>
     <%= stylesheet_link_tag "hreader-ipad" %>
+    <script type="text/javascript">
+      $(function() {
+        $("br").remove();
+        $("#user_remember_me").parent().remove();
+      });
+    </script>
   <%- end %>
-  <%= stylesheet_link_tag "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tag %> 
+  
 </head>
 <body>
 <%= render 'layouts/header' %>
