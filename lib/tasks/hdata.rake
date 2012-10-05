@@ -27,8 +27,8 @@ namespace :hdata do
 
     ## read XML files and load into DB
     files = Dir.glob("#{Rails.root}/test/fixtures/*Smith*.xml")
+    files += Dir.glob("#{Rails.root}/test/fixtures/*Jones*.xml")
 
-    # files = Dir.glob(File.dirname(__FILE__) + "/../test/fixtures/*Smith*.xml")
     files.each do |file|
       doc = Nokogiri::XML(File.read(file))
 
